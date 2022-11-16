@@ -1,0 +1,25 @@
+{
+	"name": "Place in Line",
+	"version": "0.0.5",
+	"manifest_version": 3,
+	"description": "Extension to show your place in line.",
+	"homepage_url": "http://ruben.codes",
+	"icons": {
+		"16": "icons/icon16.png",
+		"48": "icons/icon48.png",
+		"128": "icons/icon128.png"
+	},
+	"permissions": ["https://queue.ticketmaster.com/*"],
+	"content_scripts": [
+		{
+			"matches": ["https://queue.ticketmaster.com/*"],
+			"js": ["src/inject.js"]
+		}
+	],
+	"web_accessible_resources": [
+		{
+			"resources": ["src/injected.js"],
+			"matches": ["https://queue.ticketmaster.com/*"]
+		}
+	]
+}
